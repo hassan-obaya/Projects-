@@ -38,15 +38,11 @@ This project builds an LSTM-based time series forecasting model to predict Apple
 
 ## 🛠 Usage
 
-```bash
-python run_forecast.py
-```
-
-Alternatively, run interactively in a Jupyter notebook:
+Run interactively in a Jupyter notebook:
 
 ```bash
 jupyter notebook
-# Open and run `AAPL_forecast.ipynb`
+# Open and run `notebook.ipynb`
 ```
 
 ### Parameters to tweak

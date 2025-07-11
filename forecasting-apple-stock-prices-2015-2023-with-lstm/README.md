@@ -58,7 +58,8 @@ forecasting-apple-stock-prices-2015-2023-with-lstm/
 
 ```
 ├── README.md                  
-├── notebook.ipynb             
+├── notebook.ipynb
+├── code.py               
 ├── figures/                  
 │    └── prediction_plot.png     
 ├── requirements.txt            

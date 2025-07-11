@@ -22,8 +22,8 @@ This project builds an LSTM-based time series forecasting model to predict Apple
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/aapl-stock-forecast.git
-   cd aapl-stock-forecast
+   git clone https://github.com/hassan-obaya/Projects-/forecasting-apple-stock-prices-2015-2023-with-lstm.git
+   cd forecasting-apple-stock-prices-2015-2023-with-lstm
    ```
 2. Create a virtual environment (optional but recommended):
    ```bash

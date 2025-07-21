@@ -143,8 +143,6 @@ scikit-learn
 nltk
 matplotlib
 seaborn
-wordcloud
-jupyter
 ```
 
 Install:

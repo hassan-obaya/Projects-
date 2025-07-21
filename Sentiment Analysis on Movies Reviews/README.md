@@ -3,10 +3,6 @@ Here’s a more polished, GitHub‑ready `README.md` with badges, clearer format
 ````markdown
 # 🎬 Sentiment Analysis of Movie Reviews
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Notebook](https://img.shields.io/badge/notebook-Jupyter-orange.svg)](#usage)
-
 > 🚀 End‑to‑end pipeline for binary sentiment classification (positive vs. negative) on IMDb movie reviews: text cleaning, TF‑IDF and n‑gram features, Logistic Regression & Naive Bayes modeling, plus rich visualizations.
 
 

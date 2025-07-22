@@ -66,30 +66,35 @@ python classify_ag_news.py
 | Logistic Regression    | Fast, interpretable baseline         |
 | XGBoost                | Gradient-boosted decision trees      |
 | Neural Network (Keras) | Dense layers for non-linear learning |
-📈 Model Results
 
-Logistic Regression
+## 📈 Model Results
+
+### Logistic Regression
+
+```
 precision    recall  f1-score   support
 
            0       0.92      0.89      0.91      6283
            1       0.95      0.98      0.97      6466
            2       0.88      0.88      0.88      6370
            3       0.89      0.89      0.89      6401
+```
 
-Neural Network (Keras)
-Test Accuracy: 0.91
+### Neural Network (Keras)
 
-XGBoost
-              precision    recall  f1-score   support
+* **Test Accuracy**: 0.91
+
+### XGBoost
+
+```
+precision    recall  f1-score   support
 
            0       0.91      0.88      0.89      6283
            1       0.92      0.96      0.94      6466
            2       0.87      0.86      0.87      6370
            3       0.86      0.86      0.86      6401
 
-    accuracy                           0.89     25520
-   macro avg       0.89      0.89      0.89     25520
-weighted avg       0.89      0.89      0.89     25520
+```
 
 
 ## 🧪 Evaluation Metric
@@ -103,3 +108,5 @@ weighted avg       0.89      0.89      0.89     25520
 
 * Hassan Obaya
 * Contributions welcome via Pull Requests!
+
+

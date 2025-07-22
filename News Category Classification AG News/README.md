@@ -72,7 +72,7 @@ python classify_ag_news.py
 ### Logistic Regression
 
 ```
-precision    recall  f1-score   support
+                  precision    recall  f1-score   support
 
            0       0.92      0.89      0.91      6283
            1       0.95      0.98      0.97      6466
@@ -87,7 +87,7 @@ precision    recall  f1-score   support
 ### XGBoost
 
 ```
-precision    recall  f1-score   support
+                  precision    recall  f1-score   support
 
            0       0.91      0.88      0.89      6283
            1       0.92      0.96      0.94      6466

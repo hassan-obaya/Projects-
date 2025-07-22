@@ -1,5 +1,3 @@
-بالطبع! إليك ملفين جاهزين:
-````markdown
 # 📰 AG News Text Classification
 
 This project performs multi-class classification on the **AG News** dataset using various machine learning and deep learning models. It includes data preprocessing, TF-IDF feature extraction, training models (Logistic Regression, XGBoost, Neural Network), and visualization.

@@ -31,8 +31,8 @@ This project performs multi-class classification on the **AG News** dataset usin
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/ag-news-classifier.git
-cd ag-news-classifier
+git clone https://github.com/hassan-obaya/Projects-/tree/main/News%20Category%20Classification%20AG%20News.git
+cd News%20Category%20Classification%20AG%20News
 pip install -r requirements.txt
 ````
 

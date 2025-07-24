@@ -97,6 +97,8 @@ print(answer_question(question, index, chunk_list))
 * `huggingface_hub`
 
 ---
+##  Example Output
+<img width="1278" height="701" alt="Screenshot 2025-07-24 113543" src="https://github.com/user-attachments/assets/1c8be6df-44fb-41cc-b658-156da58204bb" />
 
 Out-of-context question?
 

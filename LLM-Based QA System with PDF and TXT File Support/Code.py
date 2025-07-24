@@ -76,25 +76,39 @@ def create_vector_store(chunks):
 # Step 7: QA - Retrieve + generate answer
 # -----------------------------------------------
 
-def answer_question(question, index, chunks, top_k=3):
-    """Answer the user’s question using top-k relevant chunks + LLM."""
-    q_embedding = embedder.encode([question])
-    _, retrieved_indices = index.search(np.array(q_embedding), top_k)
+from sentence_transformers.util import cos_sim
 
-    # Concatenate top-k retrieved chunks as context
-    context = "\n\n".join(chunks[i] for i in retrieved_indices[0])
-
-    # Construct the prompt for the LLM
-    prompt = f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
-
-    # Generate the answer from the LLM
-    result = llm(prompt)[0]["generated_text"]
-    answer = result.split("Answer:")[-1].strip()
-
-    # Post-processing: Handle unknown answers
-    low = answer.lower()
-    if any(phrase in low for phrase in ["i don't know", "not mentioned", "can't answer"]):
+def answer_question(question, index, chunks, top_k=3, threshold=0.2):
+    """
+    Answer only if the question is supported by the provided document.
+    
+    Steps:
+    1. Retrieve top_k chunks most similar to the question.
+    2. Compute average cosine similarity between question and those chunks.
+    3. If avg_sim < threshold: refuse to answer.
+    4. Otherwise: generate the answer from the LLM.
+    """
+    # 1. Encode question & retrieve indices
+    q_emb = embedder.encode([question])
+    _, indices = index.search(np.array(q_emb), top_k)
+    retrieved = [chunks[i] for i in indices[0]]
+    
+    # 2. Compute average similarity between question and retrieved chunks
+    chunk_embs   = embedder.encode(retrieved)
+    sims         = cos_sim(q_emb, chunk_embs)[0]   # shape: (top_k,)
+    avg_similarity = float(sims.mean())
+    
+    # 3. If not enough overlap with context, refuse
+    if avg_similarity < threshold:
         return "Sorry, I can't answer that based on the provided document."
+    
+    # 4. Build prompt from the relevant context
+    context = "\n\n".join(retrieved)
+    prompt  = f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
+    
+    # 5. Generate answer
+    gen       = llm(prompt, max_new_tokens=300)[0]["generated_text"]
+    answer    = gen.split("Answer:")[-1].strip()
     
     return answer
 
@@ -119,6 +133,11 @@ print(f"Document processed into {len(chunks)} chunks.")
 # Step 9: Ask your question!
 # -----------------------------------------------
 
-question = "Who is Trumb?"  # Example question
+question = "What does tokenization entail?"  # Example question
+print("Question:", question)
+print("Answer:", answer_question(question, index, chunk_list))
+
+
+question = "who is donald trump?"  # Example question
 print("Question:", question)
 print("Answer:", answer_question(question, index, chunk_list))

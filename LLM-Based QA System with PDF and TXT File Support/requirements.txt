@@ -1,0 +1,6 @@
+huggingface_hub
+fitz
+numpy
+faiss
+sentence_transformers
+transformers

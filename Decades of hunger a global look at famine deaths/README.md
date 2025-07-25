@@ -6,7 +6,7 @@ This notebook provides an in-depth analysis of global famine data, examining tre
 
 ## Dataset
 
-The analysis is based on a dataset of famines, which includes information on the entity (country or region), year, GDP per capita, deaths from famines, and the principal cause. The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/famines-by-level-of-gdp-per-capita-at-the-time).
+The analysis is based on a dataset of famines, which includes information on the entity (country or region), year, GDP per capita, deaths from famines, and the principal cause. The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/hassanobaya/famines-by-level-of-gdp-per-capita-at-the-time).
 
 ## Analyses
 
